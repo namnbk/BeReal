@@ -8,6 +8,7 @@
 import UIKit
 
 // TODO: Import Parse Swift
+import ParseSwift
 
 
 class FeedViewController: UIViewController {
@@ -38,13 +39,17 @@ class FeedViewController: UIViewController {
     private func queryPosts() {
         // TODO: Pt 1 - Query Posts
 // https://github.com/parse-community/Parse-Swift/blob/3d4bb13acd7496a49b259e541928ad493219d363/ParseSwift.playground/Pages/2%20-%20Finding%20Objects.xcplaygroundpage/Contents.swift#L66
-
+        // Get the date for yesterday. Adding (-1) day is equivalent to subtracting a day.
+        // NOTE: `Date()` is the date and time of "right now".
+        let yesterdayDate = Calendar.current.date(byAdding: .day, value: (-1), to: Date())!
         // 1. Create a query to fetch Posts
         // 2. Any properties that are Parse objects are stored by reference in Parse DB and as such need to explicitly use `include_:)` to be included in query results.
         // 3. Sort the posts by descending order based on the created at date
         let query = Post.query()
             .include("user")
             .order([.descending("createdAt")])
+            .where("createdAt" >= yesterdayDate)
+            .limit(10);
 
         // Fetch objects (posts) defined in query (async)
         query.find { [weak self] result in
