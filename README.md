@@ -1,10 +1,4 @@
-# Project 5 - *BeReal*
-
-Submitted by: **Nam Hoang**
-
-**Name of your app** is an app that fetches and posts people's stories
-
-Time spent: **3** hours spent in total
+# *BeReal*
 
 ## Required Features
 
@@ -14,19 +8,10 @@ The following **required** functionality is completed:
 - [x] User can log in with newly created account
 - [x] App has a feed of posts when user logs in
 - [x] User can upload a new post which takes in a picture from photo library and a caption    
- 
-The following **optional** features are implemented:
-
-- [ ] Users can pull to refresh their feed and see a loading indicator
 - [x] Users can infinite-scroll in their feed to see past the 10 most recent photos
-- [ ] Users can see location and time of photo upload in the feed    
 - [x] User is able to logout
 - [x] User stays logged in when app is closed and open again    
 
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
